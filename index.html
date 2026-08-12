@@ -1,0 +1,90 @@
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About Me</a>
+    <a href="/contact">Contact</a>
+    <a href="/feedback">Feedback</a>
+</nav>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNest by Netra</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        TechNest by Netra
+    </div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Me</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/feedback">Feedback</a>
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <div class="content">
+
+        <span class="welcome">WELCOME TO MY FIRST WEBSITE</span>
+
+        <h1>TechNest by Netra</h1>
+
+        <h2>Netra Mangesh Salunke</h2>
+
+        <h3>Diploma in Electronics Engineering</h3>
+
+        <p>
+            Hello! I am a Second Year Diploma student at
+            Veermata Jijabai Technological Institute.
+            This website is my first web development project
+            developed using Python (Flask), HTML and CSS.
+        </p>
+
+        <a href="/about" class="btn">
+            Explore More
+        </a>
+
+    </div>
+
+    <div class="image">
+
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Netra">
+
+    </div>
+
+</section>
+
+<section class="journey">
+
+    <h2>My Journey</h2>
+
+    <p>
+        I enjoy learning new technologies and improving my practical
+        knowledge through projects. This website is one of my first
+        web development projects using Python Flask.
+    </p>
+
+</section>
+
+<footer>
+
+    <p>
+        Designed & Developed by <strong>Netra Mangesh Salunke</strong>
+    </p>
+
+</footer>
+
+</body>
+
+</html>

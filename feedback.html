@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Feedback</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Me</a>
+        <a href="/contact">Contact</a>
+        <a href="/feedback">Feedback</a>
+    </nav>
+
+
+    <section class="feedback">
+
+        <h1>Share Your Feedback</h1>
+
+        <div class="feedback-box">
+
+            <form method="POST">
+
+                <input type="text" 
+                       name="name" 
+                       placeholder="Enter Your Name"
+                       required>
+
+
+                <input type="email" 
+                       name="email" 
+                       placeholder="Enter Your Email"
+                       required>
+
+
+                <textarea name="message" 
+                          placeholder="Write your feedback here..."
+                          required></textarea>
+
+
+                <button type="submit">
+                    Submit Feedback
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        <p>© 2026 Netra Salunke</p>
+    </footer>
+
+
+</body>
+
+</html>
