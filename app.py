@@ -1,5 +1,4 @@
-
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 
 app = Flask(__name__)
 
@@ -23,7 +22,6 @@ def contact():
 def feedback():
 
     if request.method == 'POST':
-
         name = request.form['name']
         email = request.form['email']
         message = request.form['message']
@@ -37,5 +35,10 @@ def feedback():
     return render_template('feedback.html')
 
 
-if __name__ == "__main__":
-   app.run(host="0.0.0.0", port=5000, debug=True) 
+@app.route('/profile.png')
+def profile_image():
+    return send_from_directory('.', 'profile.png')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
