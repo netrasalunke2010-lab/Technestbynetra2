@@ -7,422 +7,100 @@
 
     <title>TechNest by Netra</title>
 
-    <!-- Flask Static CSS -->
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
-
-    <style>
-        /* HOME PAGE DESIGN */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8fafc;
-            color: #1f2937;
-        }
-
-        /* HEADER */
-
-        header {
-            width: 100%;
-            background: #1e3a8a;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 8%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .logo {
-            color: white;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            font-size: 17px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #93c5fd;
-        }
-
-        /* HERO */
-
-        .home-hero {
-            min-height: 88vh;
-            padding: 70px 8%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 60px;
-
-            background:
-                radial-gradient(circle at 85% 30%,
-                rgba(147, 197, 253, 0.45),
-                transparent 35%),
-                linear-gradient(135deg, #eff6ff, #ffffff);
-        }
-
-        .home-content {
-            flex: 1;
-            max-width: 650px;
-        }
-
-        .welcome {
-            display: inline-block;
-            background: #dbeafe;
-            color: #1e3a8a;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 22px;
-        }
-
-        .home-content h1 {
-            font-size: 55px;
-            line-height: 1.1;
-            color: #1e3a8a;
-            margin-bottom: 15px;
-        }
-
-        .home-content h2 {
-            font-size: 32px;
-            color: #1f2937;
-            margin-bottom: 12px;
-        }
-
-        .home-content h3 {
-            font-size: 21px;
-            color: #2563eb;
-            margin-bottom: 22px;
-        }
-
-        .home-content p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #4b5563;
-            margin-bottom: 30px;
-        }
-
-        .explore-btn {
-            display: inline-block;
-            text-decoration: none;
-            background: #2563eb;
-            color: white;
-            padding: 15px 34px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-            transition: 0.3s;
-        }
-
-        .explore-btn:hover {
-            background: #1d4ed8;
-            transform: translateY(-3px);
-        }
-
-        /* PROFILE IMAGE */
-
-        .home-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .profile-card {
-            width: 370px;
-            height: 370px;
-            border-radius: 50%;
-            padding: 10px;
-            background: white;
-            box-shadow:
-                0 20px 50px rgba(30, 58, 138, 0.25),
-                0 0 0 15px rgba(219, 234, 254, 0.7);
-        }
-
-        .profile-card img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* JOURNEY */
-
-        .journey-section {
-            padding: 70px 8%;
-            background: white;
-            text-align: center;
-        }
-
-        .journey-section h2 {
-            font-size: 38px;
-            color: #1e3a8a;
-            margin-bottom: 18px;
-        }
-
-        .journey-section p {
-            max-width: 800px;
-            margin: auto;
-            font-size: 18px;
-            line-height: 1.8;
-            color: #4b5563;
-        }
-
-        .journey-line {
-            width: 80px;
-            height: 4px;
-            background: #2563eb;
-            margin: 0 auto 25px;
-            border-radius: 10px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #1e3a8a;
-            color: white;
-            text-align: center;
-            padding: 22px;
-            font-size: 16px;
-        }
-
-        footer p {
-            margin: 5px;
-        }
-
-        footer strong {
-            color: #93c5fd;
-        }
-
-        /* MOBILE */
-
-        @media screen and (max-width: 768px) {
-
-            header {
-                flex-direction: column;
-                padding: 18px 12px;
-            }
-
-            .logo {
-                font-size: 24px;
-                margin-bottom: 12px;
-                text-align: center;
-            }
-
-            nav {
-                width: 100%;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            nav a {
-                font-size: 14px;
-            }
-
-            .home-hero {
-                min-height: auto;
-                flex-direction: column-reverse;
-                text-align: center;
-                padding: 50px 20px;
-                gap: 45px;
-            }
-
-            .home-content {
-                max-width: 100%;
-            }
-
-            .home-content h1 {
-                font-size: 38px;
-            }
-
-            .home-content h2 {
-                font-size: 26px;
-            }
-
-            .home-content h3 {
-                font-size: 18px;
-            }
-
-            .home-content p {
-                font-size: 16px;
-                line-height: 1.7;
-            }
-
-            .profile-card {
-                width: 250px;
-                height: 250px;
-                padding: 7px;
-                box-shadow:
-                    0 15px 35px rgba(30, 58, 138, 0.25),
-                    0 0 0 10px rgba(219, 234, 254, 0.7);
-            }
-
-            .journey-section {
-                padding: 50px 20px;
-            }
-
-            .journey-section h2 {
-                font-size: 30px;
-            }
-
-            .journey-section p {
-                font-size: 16px;
-            }
-
-            footer {
-                font-size: 14px;
-            }
-        }
-    </style>
-
 </head>
-
 
 <body>
 
-    <!-- HEADER -->
+<header>
 
-    <header>
+    <div class="logo">
+        TechNest by Netra
+    </div>
 
-        <div class="logo">
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About Me</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('feedback') }}">Feedback</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="content">
+
+        <span class="welcome">
+            WELCOME TO MY FIRST WEBSITE
+        </span>
+
+        <h1>
             TechNest by Netra
-        </div>
-
-        <nav>
-
-            <a href="{{ url_for('home') }}">
-                Home
-            </a>
-
-            <a href="{{ url_for('about') }}">
-                About Me
-            </a>
-
-            <a href="{{ url_for('contact') }}">
-                Contact
-            </a>
-
-            <a href="{{ url_for('feedback') }}">
-                Feedback
-            </a>
-
-        </nav>
-
-    </header>
-
-
-    <!-- HOME HERO -->
-
-    <section class="home-hero">
-
-        <div class="home-content">
-
-            <span class="welcome">
-                WELCOME TO MY FIRST WEBSITE
-            </span>
-
-            <h1>
-                TechNest by Netra
-            </h1>
-
-            <h2>
-                Netra Mangesh Salunke
-            </h2>
-
-            <h3>
-                Diploma in Electronics Engineering
-            </h3>
-
-            <p>
-                Hello! I am a Second Year Diploma student at
-                Veermata Jijabai Technological Institute.
-                This website is my first web development project
-                developed using Python Flask, HTML and CSS.
-            </p>
-
-            <a href="{{ url_for('about') }}" class="explore-btn">
-                Explore More →
-            </a>
-
-        </div>
-
-
-        <!-- PROFILE IMAGE -->
-
-        <div class="home-image">
-
-            <div class="profile-card">
-
-                <img src="{{ url_for( 'filename='profile.png') }}"
-                     alt="Netra Mangesh Salunke">
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- MY JOURNEY -->
-
-    <section class="journey-section">
+        </h1>
 
         <h2>
-            My Journey
+            Netra Mangesh Salunke
         </h2>
 
-        <div class="journey-line"></div>
+        <h3>
+            Diploma in Electronics Engineering
+        </h3>
 
         <p>
-            I enjoy learning new technologies and improving my
-            practical knowledge through projects. This website
-            is one of my first web development projects using
-            Python Flask, HTML and CSS.
+            Hello! I am a Second Year Diploma student at
+            Veermata Jijabai Technological Institute.
+            This website is my first web development project
+            developed using Python (Flask), HTML and CSS.
         </p>
 
-    </section>
+        <a href="{{ url_for('about') }}" class="btn">
+            Explore More
+        </a>
+
+    </div>
 
 
-    <!-- FOOTER -->
+    <div class="image">
 
-    <footer>
+        <img src="{{ url_for('profile_image') }}"
+             alt="Netra">
 
-        <p>
-            Designed & Developed by
-            <strong>Netra Mangesh Salunke</strong>
-        </p>
+    </div>
 
-        <p>
-            © 2026 Netra Salunke
-        </p>
+</section>
 
-    </footer>
+
+<section class="journey">
+
+    <h2>
+        My Journey
+    </h2>
+
+    <p>
+        I enjoy learning new technologies and improving my
+        practical knowledge through projects.
+        This website is one of my first web development
+        projects using Python Flask.
+    </p>
+
+</section>
+
+
+<footer>
+
+    <p>
+        Designed &amp; Developed by
+        <strong>Netra Mangesh Salunke</strong>
+    </p>
+
+    <p>
+        © 2026 Netra Salunke
+    </p>
+
+</footer>
 
 </body>
-
 </html>
